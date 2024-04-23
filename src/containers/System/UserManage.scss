@@ -26,14 +26,14 @@
     color: white;
 }
 
-.btn-edit{
+.btn-edit {
     width: 50px;
     border: none;
     outline: none;
     background: transparent;
     color: orange;
 
-    &:hover{
+    &:hover {
         background: transparent !important;
         color: orange !important;
     }
@@ -46,8 +46,46 @@
     background: transparent;
     color: rgb(230, 96, 47);
 
-    &:hover{
+    &:hover {
         background: transparent !important;
         color: rgb(230, 96, 47) !important;
     }
+}
+
+.modal-user-container {
+    .modal-content {
+        .modal-header {
+            button {
+                background: transparent !important;
+                color: white;
+                border: none;
+                font-size: 25px;
+            }
+        }
+    }
+
+    .modal-user-body {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+
+        .input-container {
+            display: flex;
+            flex-direction: column;
+            width: 49%;
+
+            &.max-width-input {
+                width: 100%;
+            }
+
+            input {
+                border-radius: 3px;
+                border: 1px solid grey;
+                height: 30px;
+                outline: none;
+                padding: 0 10px;
+            }
+        }
+    }
+
 }
