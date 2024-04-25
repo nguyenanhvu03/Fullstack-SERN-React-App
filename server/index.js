@@ -4,7 +4,7 @@ const path = require('path');
 const app = express();
 
 const buildDir = path.join(__dirname, '../build');
-console.log('Using files in ' + buildDir);
+console.log('Using files in ' + buildDir)
 
 const subDir = '/';
 const logRequests = false;

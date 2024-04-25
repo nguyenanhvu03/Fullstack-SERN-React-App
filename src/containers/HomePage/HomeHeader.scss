@@ -17,7 +17,7 @@
                 height: 100%;
                 width: 100%;
                 cursor: pointer;
-                transform: scale(0.5,0.5);
+                transform: scale(0.5, 0.5);
                 margin-left: -45px;
             }
 
@@ -50,28 +50,51 @@
             justify-content: flex-end;
             align-items: center;
 
-            .support{
+            .support {
                 padding-right: 50px;
                 display: flex;
                 align-items: center;
                 cursor: pointer;
 
-                i{
+                i {
                     font-size: 15px;
                     margin-right: 5px;
                 }
             }
-            .language-vi{
+
+            .language-vi {
                 cursor: pointer;
-                &.active{
-                    color: orange;
+                opacity: 0.2;
+
+                &.active {
+                    opacity: 1;
+
+                    span {
+                        color: orange;
+                    }
+                }
+
+                &:hover {
+                    opacity: 0.8;
                 }
             }
-            .language-en{
+
+            .language-en {
                 margin: 0 10px;
                 cursor: pointer;
-                &.active{
-                    color: blue;
+                opacity: 0.2;
+
+                &.active {
+                    opacity: 1;
+
+                    span {
+                        color: blue;
+
+                    }
+                }
+
+                &:hover {
+                    opacity: 0.8;
                 }
             }
         }
@@ -134,11 +157,11 @@
     }
 
     .content-down {
-        background-image: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.9),  rgba(255, 255, 255, 1));
+        background-image: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 1));
 
         height: 35%;
         display: flex;
-        align-items:flex-end;
+        align-items: flex-end;
         justify-content: center;
 
         .options {
