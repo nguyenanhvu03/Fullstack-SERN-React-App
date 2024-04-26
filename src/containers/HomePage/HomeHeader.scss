@@ -2,6 +2,10 @@
     height: 60px;
     width: 100%;
     padding: 0 50px;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 10000;
 
     .home-header-content {
         width: 100%;

@@ -42,6 +42,10 @@
 
     }
 
+    &.section-about{
+        border: 1px solid red;
+    }
+
     .section-body {
 
         .section-customize {
@@ -130,4 +134,9 @@
         border: 1px solid violet;
         padding: 20px;
     }
+}
+
+.home-footer{
+    text-align: center;
+    padding-top: 8px;
 }

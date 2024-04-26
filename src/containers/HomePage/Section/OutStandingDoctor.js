@@ -11,8 +11,8 @@ class OutStandingDoctor extends Component {
             <div className='section-share section-outstanding-doctor'>
                 <div className='section-container'>
                     <div className='section-header'>
-                        <span className='title-section'>Cơ sở y tế nổi bật</span>
-                        <button className='btn-section'>Xem them</button>
+                        <span className='title-section'>Bác sĩ nổi bậc</span>
+                        <button className='btn-section'>Xêm thêm</button>
                     </div>
                     <div className='section-body'>
                         <Slider {...this.props.settings}>
@@ -23,8 +23,8 @@ class OutStandingDoctor extends Component {
                                         <div className='bg-image section-outstanding-doctor' />
                                     </div>
                                     <div className='position text-center'>
-                                        <div>GSTS, Nguyen Van A</div>
-                                        <div>Co xuong khop</div>
+                                        <div>GSTS, Nguyễn Anh Vũ</div>
+                                        <div>Cơ xương khớp</div>
                                     </div>
                                 </div>
                             </div>
@@ -35,23 +35,21 @@ class OutStandingDoctor extends Component {
                                         <div className='bg-image section-outstanding-doctor' />
                                     </div>
                                     <div className='position text-center'>
-                                        <div>GSTS, Nguyen Van A</div>
-                                        <div>Co xuong khop 2</div>
+                                        <div>GSTS, Nguyễn Anh Vũ</div>
+                                        <div>Cơ xương khớp 2</div>
                                     </div>
                                 </div>
                             </div>
                             <div className='section-customize'>
                                 <div className='customize-border'>
 
-                                    <div className='customize-border'>
                                         <div className='outer-bg'>
                                             <div className='bg-image section-outstanding-doctor' />
                                         </div>
                                         <div className='position text-center'>
-                                            <div>GSTS, Nguyen Van A</div>
-                                            <div>Co xuong khop 3</div>
+                                            <div>GSTS, Nguyễn Anh Vũ</div>
+                                            <div>Cơ xương khớp 3</div>
                                         </div>
-                                    </div>
                                 </div>
                             </div>
                             <div className='section-customize'>
@@ -60,8 +58,8 @@ class OutStandingDoctor extends Component {
                                         <div className='bg-image section-outstanding-doctor' />
                                     </div>
                                     <div className='position text-center'>
-                                        <div>GSTS, Nguyen Van A</div>
-                                        <div>Co xuong khop 4</div>
+                                        <div>GSTS, Nguyễn Anh Vũ</div>
+                                        <div>Cơ xương khớp 4</div>
                                     </div>
                                 </div>
                             </div>
@@ -72,8 +70,8 @@ class OutStandingDoctor extends Component {
                                         <div className='bg-image section-outstanding-doctor' />
                                     </div>
                                     <div className='position text-center'>
-                                        <div>GSTS, Nguyen Van A</div>
-                                        <div>Co xuong khop 5</div>
+                                        <div>GSTS, Nguyễn Anh Vũ</div>
+                                        <div>Cơ xương khớp 5</div>
                                     </div>
                                 </div>
                             </div>

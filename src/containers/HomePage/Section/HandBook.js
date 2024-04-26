@@ -14,7 +14,7 @@ class HandBook extends Component {
             <div className='section-share section-handbook'>
                 <div className='section-container'>
                     <div className='section-header'>
-                        <span className='title-section'>Cam nan</span>
+                        <span className='title-section'>Cẩm nang</span>
                         <button className='btn-section'>Xêm thêm</button>
                     </div>
                     <div className='section-body'>
