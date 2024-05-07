@@ -37,12 +37,13 @@
         background: #f5f5f5;
 
     }
-    &.section-outstanding-doctor{
+
+    &.section-outstanding-doctor {
         background: #f5f5f5;
 
     }
 
-    &.section-about{
+    &.section-about {
         border: 1px solid red;
     }
 
@@ -59,6 +60,10 @@
 
                 &.section-specialty {
                     background: url('../../assets/specialty/co-xuong-khop.png');
+                    background-size: cover;
+                    /* Đảm bảo hình ảnh bao phủ toàn bộ phần tử */
+                    background-position: center;
+                    /* Căn giữa hình ảnh theo chiều ngang và chiều dọc */
 
                 }
 
@@ -66,15 +71,23 @@
                     background: url('../../assets/medical-facility/co-so-y-te.png');
                 }
 
-                &.section-outstanding-doctor{
+                &.section-outstanding-doctor {
                     background: url('../../assets//outstanding-doctor/doctor.png');
+                    background-size: cover;
+                    /* Đảm bảo hình ảnh bao phủ toàn bộ phần tử */
+                    background-position: center;
+                    /* Căn giữa hình ảnh theo chiều ngang và chiều dọc */
                     width: 120px;
                     height: 120px;
                     border-radius: 50%;
                 }
 
-                &.section-handbook{
+                &.section-handbook {
                     background: url('../../assets/handbook/handbook.png');
+                    background-size: cover;
+                    /* Đảm bảo hình ảnh bao phủ toàn bộ phần tử */
+                    background-position: center;
+                    /* Căn giữa hình ảnh theo chiều ngang và chiều dọc */
                 }
             }
         }
@@ -120,23 +133,24 @@
     }
 }
 
-.section-outstanding-doctor{
-    .outer-bg{
+.section-outstanding-doctor {
+    .outer-bg {
         display: flex;
         justify-content: center;
         margin-bottom: 10px;
     }
 }
 
-.section-customize{
+.section-customize {
     padding: 5px;
-    .customize-border{
+
+    .customize-border {
         border: 1px solid violet;
         padding: 20px;
     }
 }
 
-.home-footer{
+.home-footer {
     text-align: center;
     padding-top: 8px;
 }
