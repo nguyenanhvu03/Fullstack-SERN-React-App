@@ -4,7 +4,7 @@ import './HomeHeader.scss'
 import logo from '../../assets/logo.png';
 import { FormattedMessage } from 'react-intl';
 import { LANGUAGES } from "../../utils"
-import {changeLanguageApp} from '../../store/actions'
+import { changeLanguageApp } from '../../store/actions'
 
 
 class HomeHeader extends Component {
@@ -97,12 +97,13 @@ class HomeHeader extends Component {
 const mapStateToProps = state => {
     return {
         isLoggedIn: state.user.isLoggedIn,
+        userInfo: state.user.userInfo,
         language: state.app.language,
     };
 };
 
 const mapDispatchToProps = dispatch => {
-    
+
     return {
         changeLanguageAppRedux: (language) => dispatch(changeLanguageApp(language))
     };
