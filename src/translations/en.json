@@ -1,28 +1,28 @@
 {
-    "homeheader":{
-        "speciality" : "Medical specialty",
-        "searchdoctor" : "Find a doctor by specialty",
-        "health-facility" : "Health facility",
-        "select-room" : "Choose hospital clinic",
-        "doctor" : "Doctor",
+    "homeheader": {
+        "speciality": "Medical specialty",
+        "searchdoctor": "Find a doctor by specialty",
+        "health-facility": "Health facility",
+        "select-room": "Choose hospital clinic",
+        "doctor": "Doctor",
         "select-doctor": "Choose a good doctor",
-        "fee" : "Check paskage",
-        "check-health" : "Genenal health check",
-        "support" : "Support",
-        "welcome" : "Welcome, "
+        "fee": "Check paskage",
+        "check-health": "Genenal health check",
+        "support": "Support",
+        "welcome": "Welcome, "
     },
-    "banner":{
-        "title1" : "MEDICAL BACKGROUND",
-        "title2" : "COMPREHENSIVE HEALTH CARE",
-        "child1" : "Speciallized examination",
-        "child2" : "Remote examination",
-        "child3" : "General examination",
-        "child4" : "Medical test",
-        "child5" : "Mental health",
-        "child6" : "Dental examination"
+    "banner": {
+        "title1": "MEDICAL PLATFORM",
+        "title2": "COMPREHENSIVE HEALTH CARE",
+        "child1": "Speciallized examination",
+        "child2": "Remote examination",
+        "child3": "General examination",
+        "child4": "Medical test",
+        "child5": "Mental health",
+        "child6": "Dental examination"
     },
     "menu": {
-        "admin":{
+        "admin": {
             "manage-user": "User System",
             "manage-doctor": "Manage doctor",
             "manage-admin": "Manage admin",
@@ -47,8 +47,12 @@
         "gender": "Gender",
         "position": "Position",
         "role": "Role",
-        "image": "Avata",
+        "image": "Avatar",
         "save": "Save user",
         "edit": "Edit user"
+    },
+    "homepage": {
+        "outstanding-doctor": "Last week's featured doctor",
+        "more-infor": "More Infor"
     }
 }

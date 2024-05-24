@@ -14,7 +14,7 @@ const createNewUserService = (data) => {
 
 const deleteUserService = (userId) => {
     //  return axios.delete('/api/edit-users', { id: userId })
-    return axios.delete('/api/delete-users',{
+    return axios.delete('/api/delete-users', {
         data: {
             id: userId
         }
@@ -30,4 +30,12 @@ const getAllCodeService = (inputType) => {
 
 }
 
-export { handleLoginApi, getAllUsers, createNewUserService, deleteUserService, editUserService, getAllCodeService }
+const getTopDoctorHomeService = (limit) => {
+    return axios.get(`/api/top-doctor-home?limit=${limit}`)
+}
+
+export {
+    handleLoginApi, getAllUsers, createNewUserService,
+    deleteUserService, editUserService, getAllCodeService,
+    getTopDoctorHomeService
+}

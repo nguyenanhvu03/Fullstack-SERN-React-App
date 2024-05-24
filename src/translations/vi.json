@@ -49,7 +49,10 @@
         "role": "Vai trò",
         "image": "Ảnh đại diện",
         "save": "Lưu uer",
-        "edit": "Lưu thay đổi"
-        
+        "edit": "Lưu thay đổi"   
+    },
+    "homepage": {
+        "outstanding-doctor": "Bác sĩ nổi bậc tuần qua",
+        "more-infor": "Xêm thêm"
     }
 }

@@ -31,6 +31,10 @@
     }
 }
 
+.slick-disabled {
+    display: none !important;
+}
+
 
 .section-share {
     &.section-specialty {
@@ -72,7 +76,7 @@
                 }
 
                 &.section-outstanding-doctor {
-                    background: url('../../assets//outstanding-doctor/doctor.png');
+                    // background: url('../../assets//outstanding-doctor/doctor.png');
                     background-size: cover;
                     /* Đảm bảo hình ảnh bao phủ toàn bộ phần tử */
                     background-position: center;
