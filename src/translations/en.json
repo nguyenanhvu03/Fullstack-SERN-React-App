@@ -57,5 +57,8 @@
     "homepage": {
         "outstanding-doctor": "Last week's featured doctor",
         "more-infor": "More Infor"
+    },
+    "manage-schedule":{
+        "title" : "Manage doctor's medical examination plans"
     }
 }
