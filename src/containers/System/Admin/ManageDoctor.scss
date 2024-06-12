@@ -23,7 +23,8 @@
             opacity: 0.9;
         }
     }
-    .create-content-doctor{
+
+    .create-content-doctor {
         margin-top: 20px;
         margin-bottom: 30px;
         border-radius: 3px;
@@ -34,11 +35,12 @@
         cursor: pointer;
         color: white;
 
-        &:hover{
+        &:hover {
             opacity: 0.9;
         }
     }
-    .more-info {
+
+    .more-infor {
         display: flex;
         gap: 15px;
         padding-bottom: 15px;
@@ -50,5 +52,8 @@
         .content-right {
             width: 60%;
         }
+    }
+    .more-infor-extra{
+        padding-bottom: 15px;
     }
 }
