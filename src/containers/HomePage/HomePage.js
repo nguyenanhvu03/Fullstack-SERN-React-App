@@ -19,11 +19,11 @@ class HomePage extends Component {
             infinite: false,
             speed: 500,
             slidesToShow: 4,
-            slidesToScroll: 1,
+            slidesToScroll: 2,
         };
         return (
             <div>
-                <HomeHeader isShowBanner={true}/>
+                <HomeHeader isShowBanner={true} />
                 <Specialty
                     settings={settings}
                 />
@@ -36,8 +36,8 @@ class HomePage extends Component {
                 <HandBook
                     settings={settings}
                 />
-                <About/>
-                <HomeFooter/>
+                <About />
+                <HomeFooter />
             </div>
         );
     }
