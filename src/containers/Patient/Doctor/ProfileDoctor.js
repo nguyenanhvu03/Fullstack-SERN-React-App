@@ -6,6 +6,7 @@ import { getProfileforDoctorById } from '../../../services/userService';
 import { LANGUAGES } from '../../../utils';
 import NumberFormat from 'react-number-format';
 import _ from 'lodash';
+import moment from 'moment';
 
 class ProfileDoctor extends Component {
 
@@ -46,9 +47,16 @@ class ProfileDoctor extends Component {
     renderTimeBooking = (dataTime) => {
         let { language } = this.props;
         if (dataTime && !_.isEmpty(dataTime)) {
+            let time = language === LANGUAGES.VI ?
+                dataTime.timeTypeData.valueVi : dataTime.timeTypeData.valueEn
+
+            let date = language === LANGUAGES.VI ?
+                moment.unix(+dataTime.date / 1000).format('dddd - DD/MM/YYYY')
+                :
+                moment.unix(+dataTime.date / 1000).locale('en').format('ddd - MM/DD/YYYY')
             return (
                 <>
-                    <div>----------------</div>
+                    <div>{time} - {date}</div>
                     <div>----------------</div>
                 </>
             )
