@@ -11,7 +11,14 @@ class BookingModal extends Component {
     constructor(props) {
         super(props);
         this.state = {
-
+            fullName: '',
+            phoneNumber: '',
+            email: '',
+            address: '',
+            reason: '',
+            birthday: '',
+            gender: '',
+            doctorId: '',
         }
     }
 
@@ -25,6 +32,14 @@ class BookingModal extends Component {
         }
     }
 
+    handleonchangeInput = (event, id) => {
+        let valueInput = event.target.value;
+        let stateCopy = {...this.state};
+        stateCopy[id] = valueInput;
+        this.setState({
+            ...stateCopy
+        })
+    }
     render() {
         let { isOpenModal, closeBookingClose, dataTime } = this.props;
         let doctorId = '';
@@ -32,7 +47,7 @@ class BookingModal extends Component {
             doctorId = dataTime.doctorId
         }
         // let doctorId = dataTime && !_.isEmpty(dataTime) ? dataTime.doctorId : '';
-        console.log('log from modal', this.props)
+        console.log('check', this.state)
         return (
             <Modal
                 isOpen={isOpenModal}
@@ -60,26 +75,41 @@ class BookingModal extends Component {
                         <div className='row'>
                             <div className='col-6 form-droup'>
                                 <label>Họ tên</label>
-                                <input className='form-control' />
+                                <input className='form-control' 
+                                value={this.state.fullName}
+                                onChange={(event) => this.handleonchangeInput(event, 'fullName')}
+                                />
                             </div>
                             <div className='col-6 form-droup'>
                                 <label>Số điện thoại</label>
-                                <input className='form-control' />
+                                <input className='form-control' 
+                                value={this.state.phoneNumber}
+                                onChange={(event) => this.handleonchangeInput(event, 'phoneNumber')}
+                                />
                             </div>
                             <div className='col-6 form-droup'>
                                 <label>Địa chỉ Email</label>
-                                <input className='form-control' />
+                                <input className='form-control' 
+                                value={this.state.email}
+                                onChange={(event) => this.handleonchangeInput(event, 'email')}
+                                />
                             </div>
                             <div className='col-6 form-droup'>
                                 <label>Địa chỉ liên hệ</label>
-                                <input className='form-control' />
+                                <input className='form-control' 
+                                value={this.state.address}
+                                onChange={(event) => this.handleonchangeInput(event, 'address')}
+                                />
                             </div>
                             <div className="col-12 form-group">
                                 <label>Lí do khám</label>
-                                <input className="form-control double-height" />
+                                <input className="form-control double-height" 
+                                value={this.state.reason}
+                                onChange={(event) => this.handleonchangeInput(event, 'reason')}
+                                />
                             </div>
                             <div className='col-6 form-droup'>
-                                <label>Đặt cho ai</label>
+                                <label>Ngay sinh</label>
                                 <input className='form-control' />
                             </div>
                             <div className='col-6 form-droup'>
