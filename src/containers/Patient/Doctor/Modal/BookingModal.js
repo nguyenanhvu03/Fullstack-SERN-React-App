@@ -114,9 +114,9 @@ class BookingModal extends Component {
         let { language } = this.props;
         if (dataTime && !_.isEmpty(dataTime)) {
             let name = language === LANGUAGES.VI ?
-                `${dataTime.doctorData.lastName} ${dataTime.doctorData.firstName}`
-                :
                 `${dataTime.doctorData.firstName} ${dataTime.doctorData.lastName}`
+                :
+                `${dataTime.doctorData.lastName} ${dataTime.doctorData.firstName}`
             return name;
         }
         return ''
