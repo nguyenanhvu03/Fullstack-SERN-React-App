@@ -1,19 +1,41 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
-
+import { postVerifyBookAppointment } from '../../services/userService';
+import HomeHeader from '../HomePage/HomeHeader';
+import './VerifyEmail.scss'
 
 class VerifyEmail extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
-
+            statusVerify: false,
+            errCode: 0
         }
     }
 
-    async componentDidMount(){
-
+    async componentDidMount() {
+        if (this.props.location && this.props.location.search) {
+            let urlParams = new URLSearchParams(this.props.location.search);
+            let token = urlParams.get('token');
+            let doctorId = urlParams.get('doctorId');
+            let res = await postVerifyBookAppointment({
+                token: token,
+                doctorId: doctorId
+            })
+            if (res && res.errCode === 0) {
+                this.setState({
+                    statusVerify: true,
+                    errCode: res.errCode
+                })
+            } else {
+                this.setState({
+                    statusVerify: true,
+                    errCode: res && res.errCode ? res.errCode : -1
+                })
+            }
+        }
     }
 
     async componentDidUpdate(prevProps, prevState, snapshot) {
@@ -23,8 +45,26 @@ class VerifyEmail extends Component {
     }
 
     render() {
+        let { statusVerify, errCode } = this.state;
         return (
-            <div>ve</div>
+            <>
+                <HomeHeader />
+                <div className='verify-email-container'>
+                    {statusVerify === false ?
+                        <div>
+                            Loading....
+                        </div>
+                        :
+                        <div>
+                            {+errCode === 0 ?
+                                <div className='info-booking'>Xác nhận lịch hẹn thành công!</div> :
+                                <div className='info-booking'>Lịch hẹn không tồn tại hoặc đã được xác nhận1</div>
+                            }
+                        </div>
+                    }
+                </div>
+
+            </>
         );
     }
 
