@@ -5,6 +5,8 @@ import './ManageSpecialty.scss';
 import MarkdownIt from 'markdown-it';
 import MdEditor from 'react-markdown-editor-lite';
 import { CommonUtils } from '../../../utils';
+import { createNewSpecialty } from '../../../services/userService';
+import { toast } from 'react-toastify';
 
 const mdParser = new MarkdownIt();
 
@@ -15,8 +17,8 @@ class ManageSpecialty extends Component {
         this.state = {
             name: '',
             imageBase64: '',
-            desCriptionHTML: '',
-            desCriptionMarkdown: '',
+            descriptionHTML: '',
+            descriptionMarkdown: '',
         }
     }
 
@@ -38,10 +40,11 @@ class ManageSpecialty extends Component {
     }
     handleEditorChange = ({ html, text }) => {
         this.setState({
-            desCriptionHTML: html,
-            desCriptionMarkdown: text
+            descriptionHTML: html,
+            descriptionMarkdown: text
         })
     }
+    
     handleOnchangeImage = async (event) => {
         let data = event.target.files;
         let file = data[0];
@@ -52,8 +55,14 @@ class ManageSpecialty extends Component {
             })
         }
     }
-    handleSaveNewSpecialty = () => {
-
+    handleSaveNewSpecialty = async () => {
+        let res = await createNewSpecialty(this.state)
+        if (res && res.errCode === 0) {
+            toast.success('Add new specialty success!')
+        } else {
+            toast.error('Something wrong....')
+            console.log('>>>: ', res)
+        }
     }
     render() {
         return (
@@ -78,7 +87,7 @@ class ManageSpecialty extends Component {
                             style={{ height: '300px' }}
                             renderHTML={text => mdParser.render(text)}
                             onChange={this.handleEditorChange}
-                            value={this.state.desCriptionMarkdown}
+                            value={this.state.descriptionMarkdown}
                         />
                     </div>
                     <div className='col-12'>
