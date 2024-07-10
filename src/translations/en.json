@@ -56,7 +56,8 @@
     },
     "homepage": {
         "outstanding-doctor": "Last week's featured doctor",
-        "more-infor": "More Infor"
+        "more-infor": "More Infor",
+        "speciality-poplular":"popular specialties"
     },
     "manage-schedule":{
         "title" : "Manage doctor's medical examination plans",
