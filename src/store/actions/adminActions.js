@@ -2,7 +2,7 @@ import actionTypes from './actionTypes';
 import {
     getAllCodeService, createNewUserService, getAllUsers,
     deleteUserService, editUserService, getTopDoctorHomeService,
-    getAllDoctors, saveDetailDoctorService
+    getAllDoctors, saveDetailDoctorService, getAllSpecialty
 } from "../../services/userService";
 import { toast } from 'react-toastify';
 
@@ -198,12 +198,12 @@ export const fetchTopDoctor = () => {
     return async (dispatch, getState) => {
         try {
             let res = await getTopDoctorHomeService('');
-            if(res && res.errCode === 0){
+            if (res && res.errCode === 0) {
                 dispatch({
                     type: actionTypes.FETCH_TOP_DOCTORS_SUCCESS,
                     dataDoctors: res.data
                 })
-            }else{
+            } else {
                 dispatch({
                     type: actionTypes.FETCH_TOP_DOCTORS_FAILED,
                 })
@@ -220,12 +220,12 @@ export const fetchAllDoctors = () => {
     return async (dispatch, getState) => {
         try {
             let res = await getAllDoctors();
-            if(res && res.errCode === 0){
+            if (res && res.errCode === 0) {
                 dispatch({
                     type: actionTypes.FETCH_ALL_DOCTORS_SUCCESS,
                     dataDr: res.data
                 })
-            }else{
+            } else {
                 dispatch({
                     type: actionTypes.FETCH_ALL_DOCTORS_FAILED,
                 })
@@ -243,11 +243,12 @@ export const saveDetailDoctor = (data) => {
     return async (dispatch, getState) => {
         try {
             let res = await saveDetailDoctorService(data);
-            if(res && res.errCode === 0){
+            if (res && res.errCode === 0) {
                 toast.success('Save infor Detail Doctor succeed')
                 dispatch({
-                    type: actionTypes.SAVE_DATAIL_DOCTOR_SUCCESS,                })
-            }else{
+                    type: actionTypes.SAVE_DATAIL_DOCTOR_SUCCESS,
+                })
+            } else {
                 toast.error('Save infor Detail Doctor error')
                 dispatch({
                     type: actionTypes.SAVE_DATAIL_DOCTOR_FAILED,
@@ -267,12 +268,12 @@ export const fetchAllScheduleTime = () => {
     return async (dispatch, getState) => {
         try {
             let res = await getAllCodeService("TIME");
-            if(res && res.errCode === 0){
+            if (res && res.errCode === 0) {
                 dispatch({
                     type: actionTypes.FETCH_ALLCODE_SCHEDULE_TIME_SUCCESS,
                     dataTime: res.data
                 })
-            }else{
+            } else {
                 dispatch({
                     type: actionTypes.FETCH_ALLCODE_SCHEDULE_TIME_FAILED,
                 })
@@ -293,11 +294,17 @@ export const getRequiredDoctorInfor = () => {
             let resPrice = await getAllCodeService('PRICE');
             let resPayment = await getAllCodeService('PAYMENT');
             let resProvince = await getAllCodeService('PROVINCE');
-            if (resPrice && resPrice.errCode === 0 && resPayment && resPayment.errCode === 0 && resProvince && resProvince.errCode === 0) {
+            let resSpecialty = await getAllSpecialty();
+            if (resPrice && resPrice.errCode === 0
+                && resPayment && resPayment.errCode === 0
+                && resProvince && resProvince.errCode === 0
+                && resSpecialty && resSpecialty.errCode === 0
+            ) {
                 let data = {
                     resPrice: resPrice.data,
                     resPayment: resPayment.data,
-                    resProvince: resProvince.data
+                    resProvince: resProvince.data,
+                    resSpecialty: resSpecialty.data,
                 }
                 dispatch(fetchRequiredDoctorInforSuccess(data))
             } else {
