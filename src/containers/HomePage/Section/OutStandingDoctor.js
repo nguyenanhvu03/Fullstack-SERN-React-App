@@ -4,7 +4,7 @@ import Slider from 'react-slick';
 import * as actions from '../../../store/actions'
 import { LANGUAGES } from '../../../utils';
 import { FormattedMessage } from 'react-intl';
-import { withRouter} from 'react-router'
+import { withRouter } from 'react-router'
 
 
 class OutStandingDoctor extends Component {
@@ -28,8 +28,9 @@ class OutStandingDoctor extends Component {
     }
 
     handleViewDetailDoctor = (doctor) => {
-        console.log(doctor);
-        this.props.history.push(`/detail-doctor/${doctor.id}`)
+        if (this.props.history) {
+            this.props.history.push(`/detail-doctor/${doctor.id}`)
+        }
     }
     render() {
         let arrDoctors = this.state.arrDoctors;
@@ -40,10 +41,10 @@ class OutStandingDoctor extends Component {
                 <div className='section-container'>
                     <div className='section-header'>
                         <span className='title-section'>
-                            <FormattedMessage id="homepage.outstanding-doctor"/>
+                            <FormattedMessage id="homepage.outstanding-doctor" />
                         </span>
                         <button className='btn-section'>
-                            <FormattedMessage id="homepage.more-infor"/>
+                            <FormattedMessage id="homepage.more-infor" />
                         </button>
                     </div>
                     <div className='section-body'>
