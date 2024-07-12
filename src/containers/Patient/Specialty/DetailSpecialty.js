@@ -6,18 +6,50 @@ import HomeHeader from '../../HomePage/HomeHeader';
 import DoctorSchedule from '../Doctor/DoctorSchedule';
 import DoctorExtraInfor from '../Doctor/DoctorExtraInfor';
 import ProfileDoctor from '../Doctor/ProfileDoctor';
+import { getAllDetailSpecialtyById, getAllCodeService } from '../../../services/userService';
+import _ from 'lodash';
+import { LANGUAGES } from '../../../utils';
+
 
 class DetailSpecialty extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            arrDoctorId: [15, 14]
+            arrDoctorId: [],
+            datadetailSpecialty: {},
+            listProvince: []
         };
     }
 
     async componentDidMount() {
-        // Add any data fetching or initialization logic here
+        if (this.props.match && this.props.match.params && this.props.match.params.id) {
+            let id = this.props.match.params.id;
+
+            let res = await getAllDetailSpecialtyById({
+                id: id,
+                location: 'ALL'
+            });
+
+            let resProvince = await getAllCodeService('PROVINCE')
+            if (res && res.errCode === 0 && resProvince && resProvince.errCode === 0) {
+                let data = res.data;
+                let arrDoctorId = [];
+                if (data && !_.isEmpty(res.data)) {
+                    let arr = data.doctorSpecialty;
+                    if (arr && arr.length > 0) {
+                        arr.map(item => {
+                            arrDoctorId.push(item.doctorId)
+                        })
+                    }
+                }
+                this.setState({
+                    datadetailSpecialty: res.data,
+                    arrDoctorId: arrDoctorId,
+                    listProvince: resProvince.data
+                })
+            }
+        }
     }
 
     async componentDidUpdate(prevProps, prevState, snapshot) {
@@ -26,14 +58,32 @@ class DetailSpecialty extends Component {
         }
     }
 
+    handleOnchangeSelect  = (event) => {
+        console.log(event.target.value)
+    }
     render() {
-        let { arrDoctorId } = this.state;
+        let { arrDoctorId, datadetailSpecialty, listProvince } = this.state;
+        let { language } = this.props
         return (
             <div className='detail-specialty-container'>
                 <HomeHeader />
                 <div className='detail-specialty-body'>
                     <div className='description-specialty'>
-
+                        {datadetailSpecialty && !_.isEmpty(datadetailSpecialty)
+                            &&
+                            <div div dangerouslySetInnerHTML={{ __html: datadetailSpecialty.descriptionHTML }}></div>
+                        }
+                    </div>
+                    <div className='search-sp-doctor'>
+                        <select onChange={(event) => this.handleOnchangeSelect(event)}>
+                            {listProvince && listProvince.length > 0 && listProvince.map((item, index) => {
+                                return (
+                                    <option key={index} value={item.keyMap}>
+                                        {language === LANGUAGES.VI ? item.valueVi : item.valueEn}
+                                    </option>
+                                )
+                            })}
+                        </select>
                     </div>
                     {arrDoctorId && arrDoctorId.length > 0 && arrDoctorId.map((item, index) => {
                         return (
