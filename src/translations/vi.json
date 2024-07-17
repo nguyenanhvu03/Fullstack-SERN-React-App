@@ -36,7 +36,8 @@
             "manage-handbook": "Quản lý cẩm nang"
         },
         "doctor": {
-            "manage-schedule": "Quản lý kế hoạch khám bệnh"
+            "manage-schedule": "Quản lý kế hoạch khám bệnh",
+            "manage-patient": "Quản lý bệnh nhân khám bệnh"
         }
     },
     "manage-user": {
@@ -55,7 +56,7 @@
         "edit": "Lưu thay đổi"
     },
     "homepage": {
-        "outstanding-doctor": "Bác sĩ nổi bậc tuần qua",
+        "outstanding-doctor": "Bác sĩ nổi bậc",
         "more-infor": "Xêm thêm",
         "speciality-poplular":"Chuyên Khoa phổ biến"
     },

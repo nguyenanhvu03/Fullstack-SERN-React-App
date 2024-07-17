@@ -67,11 +67,7 @@ class ManageSchedule extends Component {
     handleChangeSelect = async (selectedOption) => {
         this.setState({ selectedDoctor: selectedOption })
     };
-    handleOnchangeDatePicker = (date) => {
-        this.setState({
-            currentDate: date[0]
-        })
-    }
+     
     handleClickBtnTime = (time) => {
         let { rangeTime } = this.state;
         if (rangeTime && rangeTime.length > 0) {
