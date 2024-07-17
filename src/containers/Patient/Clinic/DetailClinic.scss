@@ -77,4 +77,21 @@
         font-size: 16px;
         font-weight: 600;
     }
+
+    .clinic-name{
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 30px;
+        padding: 30px 0;
+    }
+    .clinic-img {
+        width: 200px; /* Set the desired width */
+        height: auto; /* Let the height adjust automatically */
+        margin-bottom: 20px; /* Optional: Add some space below the image */
+    }
+    
+    .clinic-img img {
+        width: 100%; /* Make the image take the full width of its container */
+        height: auto; /* Maintain the aspect ratio of the image */
+    }
 }
