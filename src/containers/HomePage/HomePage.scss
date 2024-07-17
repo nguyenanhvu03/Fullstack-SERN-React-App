@@ -55,11 +55,14 @@
 
         .section-customize {
             .bg-image {
-                width: 278px;
-                height: 150px;
-                background-position: center center;
-                background-repeat: no-repeat;
+                width: 320px;
+                height: 180px;
+                // background-position: center center;
+                // background-repeat: no-repeat;
+                // background-size: cover;
                 background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
                 background-color: #eee;
 
                 &.section-specialty {
@@ -69,10 +72,6 @@
                     background-position: center;
                     /* Căn giữa hình ảnh theo chiều ngang và chiều dọc */
 
-                }
-
-                &.section-medical-facility {
-                    background: url('../../assets/medical-facility/co-so-y-te.png');
                 }
 
                 &.section-outstanding-doctor {
@@ -100,7 +99,7 @@
 
 
 .section-share {
-    height: 330px;
+    height: 360px;
 
     .section-container {
         margin: 0 100px;
