@@ -241,6 +241,11 @@ class BookingModal extends Component {
                                 <label>
                                     <FormattedMessage id="patient.booking-modal.birthday" />
                                 </label>
+                                {/* <DatePicker
+                                    onChange={this.handleOnchangeDatePicker}
+                                    className='form-control'
+                                    value={this.state.birthday}
+                                /> */}
                                 <DatePicker
                                     onChange={this.handleOnchangeDatePicker}
                                     className='form-control'
